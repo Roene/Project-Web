@@ -1,0 +1,392 @@
+@font-face {
+	font-family: NexaRegular;
+	src: url("../webfonts/Nexa-Regular.otf"); 
+}
+
+@font-face {
+	font-family: Nexa Bold;
+	src: url("../webfonts/Nexa-Bold.otf"); 
+}
+
+/*algemene vormgeving*/
+* {
+	box-sizing: border-box;				/* width & height bevatten waarde van padding en border, maar niet van de margin */
+}
+
+body {
+	background-color: #f3e5d8;
+	margin: 0;
+	padding: 0;
+}
+
+/* header content */
+header nav ul {
+	background-color: #fff;
+	margin: 0;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+}
+
+ul {
+	list-style-type: none;
+} 
+
+li:nth-of-type(2) {
+	margin-left: auto;
+}
+
+img[src="images/transavia2.png"] {				/* Transavia logo */
+	width: 10em;
+	height: 2em;
+	margin-top: .5em;
+	margin-left: -2em;
+	margin-bottom: .5em;
+} 
+
+img[src="images/hartje.png"] {					/*Favorieten hartje */
+	width: 2.5em;
+	margin-right: .7em;
+	margin-top: .5em;
+}	
+
+img[src="images/aanmelden.png"] {				/*Aanmelden knop */
+	width: 2em;
+	margin-right: .5em;
+	margin-top: .6em;
+}
+
+/*Main content*/
+main article header {
+	background-color: #fff;
+	border-radius: .5rem .5rem 0 0;
+}
+
+section:nth-of-type(1) {
+	background-image: url('../images/transavia.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;	
+	height: 8em;
+	margin: 0;
+}	
+
+h1 {
+	color: #2800a0;
+	font-size: 2.375em;
+	font-weight: bold;
+	text-align: center;
+	font-family: "Nexa Bold";
+	margin: 0;
+}	
+
+h2 {
+	color: #00d66c;
+	font-size: 1.25em;
+	font-weight: bold;
+	text-align: center;
+	font-family: "Nexa Bold";
+	padding-top: 0.3em;
+}
+
+p {
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-bottom: 1.5em;
+	font-family: "NexaRegular";
+	color: #fff;
+}
+
+aside {
+	display: flex;
+	margin: auto;
+}
+
+article {														/*Algemene style voor artices*/
+	border-radius: .5rem;
+	background-size: cover;
+	background-position: center; 
+}
+
+article:first-child {											
+	background-image: url('../images/opa.jpg'); 
+}
+
+article:nth-of-type(2) {										
+	background-image: url('../images/moe.png');
+}
+
+article:nth-of-type(3) {										
+	background-image: url('../images/vi.png');
+}
+
+article:nth-of-type(4) {										
+	background-image: url('../images/lubbers.png');
+}
+
+article:nth-of-type(5) {										
+	background-image: url('../images/langefrans.png');
+}
+
+article:nth-of-type(6) {										
+	background-image: url('../images/zombie.png');
+}
+
+article:nth-of-type(7) {							
+	background-image: url('../images/jezus.png');
+}
+
+article:nth-of-type(8) {								
+	background-image: url('../images/cruijff.png');
+}
+
+article:last-child {							
+	background-image: url('../images/jeroen.png');
+}
+
+article footer {
+	display: flex; 
+	flex-wrap: wrap;
+}
+
+article a {														/*Linkje naar het verhaal in de article */
+	background-color: #00d66c;
+	color: #fff;
+	border: 0;
+	box-shadow: inset 0 -0.1875rem 0.0625rem #1e9162;
+	padding: .5rem;
+	transition: .2s;
+	border-radius: 1.25em;
+	font-family: "Nexa Bold";
+	margin-bottom: .5em;
+	margin-left: .5em;
+	display: inline-block;
+	text-decoration: none;
+	font-size: 1.2em;
+}
+
+article footer button {
+	background-image: url('../images/hartje.png');
+	background-size: 3em;
+	width: 3em;
+	height: 3em;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-style: none;
+	cursor: pointer;
+	background-color: rgba(255,255,255, .0);
+	position: relative;
+	margin-left: auto;
+	margin-right: .5em;
+}
+
+.color-active {
+	background-image: url('../images/hartjerood.png');
+	background-size: 3em;
+	width: 3em;
+	height: 3em;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-style: none;
+	cursor: pointer;
+	position: relative;
+	margin-left: auto;
+	margin-right: .5em;
+	transition: 5s;
+}
+
+.download {
+	background-image: url('../images/download.png');
+	background-size: 3em;
+	width: 3em;
+	height: 3em;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-style: none;
+	cursor: pointer;
+	position: relative;
+	margin-left: auto;
+	transition: 6s;
+}
+
+.download-active {
+	background-image: url('../images/add_actief.png');
+	background-size: 3em;
+	width: 3em;
+	height: 3em;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-style: none;
+	cursor: pointer;
+	position: relative;
+	margin-left: auto;
+	transform: rotate(360deg);
+}
+	
+/* Verhalen laten verschijnen */
+/* Animatiebron: http://stackoverflow.com/questions/30696642/css-fadein-fadeout-onclick */
+@keyframes ArticlefadeIn {
+    from { opacity:0;
+        transform: translateY(-1em);
+    }
+    to { opacity:1;
+        transform: translateY(0);
+    }
+}
+/* Einde bronvermelding */
+
+.extra {
+	display: none;
+	animation: ArticlefadeIn 3s ease-in;
+}
+
+.showextra {
+	display: block;
+}
+
+section button {
+	background-color: #2800a0;
+	color: #fff;
+	cursor: pointer;
+	border: 0;
+	box-shadow: inset 0 -0.1875em 0.0625em #120145;
+	padding: .5rem;
+	transition: .2s;
+	border-radius: 1.25em;
+	font-family: "Nexa Bold";
+	font-size: 1.2em;
+	display: block;
+	margin: auto;
+	margin-bottom: .4em;
+}
+
+section button:active {
+	background-color: #120145;
+}
+
+/*Link state in article */
+article a:active {
+	background-color: #1e9162;
+}
+
+/*formulier */
+fieldset {
+	border: 0;
+}
+	
+legend	{
+	display: none;
+}
+
+aside form:first-child {
+	margin-left: auto;
+}
+
+aside form:last-child {
+	margin-right: auto;
+}
+
+select {
+	height: 2em;
+	font-size: 1em;
+	border-radius: .5rem;
+	border: #2800a0;
+	background-color: #2800a0;
+	color: #fff; 
+}
+
+select:hover {
+	background-color: #ff3268;
+}
+
+input[type=text] {
+	display: block;
+	margin: auto;
+	width: 9em;
+	border: .0625em solid #ccc;
+	border-radius: .5em;
+	font-size: 1em;
+	background-image: url('../images/searchicon.png');
+	background-size: 2em;
+	background-position: 0.3125em;
+	background-repeat: no-repeat;
+	padding: .75em 1.25em .75em 2.5em;
+	transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 75%;
+	border: .0625em solid #2800a0;
+	outline: 0;
+}
+
+/*Media queries*/
+/* 1 Column */
+@media screen and (min-width: 15em) {						/*240px*/
+	article {
+		max-width: 20em;
+		margin: .55em auto;
+	}
+	p {
+		max-width: 25em;
+	}
+}
+
+@media screen and (min-width: 32.5em) {						/*520px*/
+	article {
+		max-width: 30em;
+	}
+	p {
+		max-width: 25em;
+	}
+}
+/* 2 Column */
+@media screen and (min-width: 48em) {						/*768px*/
+	main{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	article {
+		margin: .55em;
+		position: relative;
+		max-width: 20em;
+	}
+	header h2{
+		margin: 0;
+	}
+	p {
+		min-height: 13em;
+	}
+}
+
+@media screen and (min-width: 53.4375em) {					/*855px*/
+	article {
+		max-width: 25em;
+	}
+	p {
+		min-height: 10em;
+	}
+}
+
+@media screen and (min-width: 65em) {						/*1040px*/
+	article {
+		min-width: 30em;
+	}
+}
+/* 3 Column */
+@media screen and (min-width: 85em) {						/*1360px*/
+	article {
+		min-width: 25em;
+	}
+}
+
+@media screen and (min-width: 100em) {						/*1600px*/
+	article {
+		max-width: 35em;
+	}
+	p {
+		max-width: 30em;
+		min-height: 8em;
+	}
+}

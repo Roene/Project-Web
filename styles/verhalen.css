@@ -1,0 +1,218 @@
+@font-face {
+	font-family: NexaRegular;
+	src: url("../webfonts/Nexa-Regular.otf"); 
+}
+
+@font-face {
+	font-family: Nexa Bold;
+	src: url("../webfonts/Nexa-Bold.otf"); 
+}
+
+
+/* header content */
+header nav ul {
+	background-color: #fff;
+	margin: 0;
+	display: flex;
+	flex-flow: row;
+	justify-content: space-between;
+}
+
+ul {
+	list-style-type: none;
+} 
+
+li:nth-of-type(2) {
+	margin-left: auto;
+}
+
+img[src="images/transavia2.png"] {				/* Transavia logo */
+	width: 10em;
+	height: 2em;
+	margin-top: .5em;
+	margin-left: -2em;
+	margin-bottom: .5em;
+} 
+
+img[src="images/hartje.png"] {					/*Favorieten hartje */
+	width: 2.5em;
+	margin-right: .7em;
+	margin-top: .5em;
+}	
+
+img[src="images/aanmelden.png"] {				/*Aanmelden knop */
+	width: 2em;
+	margin-right: .5em;
+	margin-top: .6em;
+}
+
+/* basis */
+.alzheimer, .voetbalanalisten, .moe {
+    background-size: 100%;
+    padding-bottom: 530%;
+    background-repeat: no-repeat;
+}
+
+/*formulieren*/
+fieldset {
+	border: 0;
+}
+
+legend {
+	color: #2800a0;
+	font-family: "Nexa Bold";
+	font-size: 1.25em;
+}
+
+section {
+	background-color: #00d66c;
+	border-radius: .95em;
+	margin: 1em auto;
+	position: relative;
+	max-width: 35em;
+}
+
+form {
+	display: inline-block;
+	max-width: 60em;
+	border-radius: .95em;
+	padding: 0;
+	margin: 0;
+}
+	
+form button {
+	background-color: #ff3268;
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+	border: 0;
+	box-shadow: inset 0 -0.1875em 0.0625em #ca2b55;
+	padding: .5rem;
+	transition: .2s;
+	border-radius: 1.25em;
+	min-height: 1.5rem;
+	min-width: 1.5rem;
+	font-family: "NexaRegular";
+	display: block;
+	margin-top: .5em;
+}
+
+form button:active {
+	background-color: #ca2b55;
+}
+
+form label {
+	display: inline-block;
+	text-align: left;
+	margin-bottom: .2em;
+	margin-top: .2em;
+	font-family: "Nexa Bold";
+	width: 80%;	
+}
+
+form input {
+	border-radius: .5rem;
+    border: 1px solid lightgray;
+    padding: 0.5em 0.5em;
+    display: inline;
+    width: 88%;
+    font-size: 0.8em;
+	outline: 0;
+}
+
+textarea {
+	height: 15em;
+	width: 88%;
+	border-radius: .5rem;
+    border: 1px solid lightgray;
+    padding: 0.5em 0.5em;
+    display: inline;
+    width: 88%;
+    font-size: 0.8em;
+	outline: 0;
+}
+
+/*Formulier states*/
+input:hover {
+	border: .0625em solid #000000;
+}
+
+input:focus {
+	border: .0625em solid #2800a0;
+}
+
+@keyframes checkValid {
+    from { opacity:0;
+    }
+    to { opacity:1;
+    }
+}
+
+input:required:valid {
+    border-color: #00d66c;
+    width: 88%;
+    background: #fff url('../images/add_actief.png') no-repeat 35em;
+    animation: checkValid 0.8s ease-in;
+    background-size: 1.5em;
+}
+
+/* Link states */
+a {
+	color: #000;
+}
+
+a:visited {
+	color: #2800a0
+}
+
+/*Button*/
+button {
+	cursor: pointer;
+	font-size: 1.2em;
+}
+
+/*Media queries*/
+@media screen and (min-width: 15em) {						/*360px*/
+	.alzheimer {
+		background-image: url('../images/alzheimersmall.jpg');
+	}
+	.voetbalanalisten {
+		background-image: url('../images/voetbalanalistensmall.jpg');
+		padding-bottom: 1045%;
+	}
+	.moe {
+		background-image: url('../images/moesmall.jpg');
+		padding-bottom: 830%;
+	}
+}
+
+@media screen and (min-width: 48em) {						/*768px*/
+	.alzheimer {
+		background-image: url('../images/alzheimermedium.jpg');
+		padding-bottom: 132%;
+	}
+	.voetbalanalisten {
+		background-image: url('../images/voetbalanalistenmedium.jpg');
+		padding-bottom: 132%;
+	}
+	.moe {
+		background-image: url('../images/moemedium.jpg');
+		padding-bottom: 275%;
+	}
+	
+}
+
+@media screen and (min-width: 100em) {						/*1600px*/
+	.alzheimer {
+		background-image: url('../images/alzheimerlarge.jpg');
+		padding-bottom: 55%;
+	}
+	.voetbalanalisten {
+		background-image: url('../images/voetbalanalistenlarge.jpg');
+		padding-bottom: 55%;
+	}
+	.moe {
+		background-image: url('../images/moelarge.jpg');
+		padding-bottom: 55%;
+	}
+}
