@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="styles/verhalen.css" type="text/css">
 		<meta charset="utf-8">	
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</head>
 	
 	<body>
@@ -17,22 +18,30 @@
 					<li><a href="login.html"><img src="images/aanmelden.png" alt="aanmelden"></a></li>
 				</ul>
 			</nav>
+			<div id="counter">0</div>
 		</header>
 		
 		<main class="moe">
 		</main>
+		<section>
+			<button class="like" onclick="likePopUp();">Leuk verhaal</button>
+			<div id="countLike">
+				141
+				<img src="images/duimpje.png" alt="thumb" class="likeUp">
+			</div>
+		</section>
 		
 		<section>
-		<form>
-			<fieldset>
-				<legend>Plaats een reactie</legend>
-					<label for="name">Naam</label><input type="text" id="name" required>
-					<label for="mail">E-mailadres</label><input type="email" id="mail" placeholder="gebruiker@domein.com" required>
-					<label for="message">Bericht</label><textarea id="message"></textarea>
-					<button type="submit">Plaats reactie</button>
-			</fieldset>
-		</form>
-	</section>
+			<h3 id="finalMessage"></h3>
+			<button id="download" onclick="downloading(0)">Download</button>
+			<progress id="progressBar" value="0" max="100"></progress>
+			<span id="status"></span>
+		</section>
 		
+		<audio autoplay loop>
+			<source src="music/moe.mp3">
+		</audio>
+		
+		<script src="js/verhalen.js"></script>
 	</body>
 </html>

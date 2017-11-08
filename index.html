@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="styles/style.css" type="text/css">
 		<meta charset="utf-8">	
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</head>
 	
 	<body>
@@ -13,20 +14,23 @@
 			<nav>
 				<ul>
 					<li><a href="index.html"><img src="images/transavia2.png" alt="logo transavia"></a></li>
-					<li><a href="favorietenlijst.html"><img src="images/hartje.png" alt="hartje"></a></li>
+					<li><input type="search" placeholder="Zoeken"></li>
+					<li><a href="favorietenlijst.html"><img src="images/hartje.png" id="favorite" alt="hartje"></a></li>
 					<li><a href="login.html"><img src="images/aanmelden.png" alt="aanmelden"></a></li>
 				</ul>
 			</nav>
+			<div id="counter">0</div>
 		</header>
 		
 		<section>
 			<h1>99 Verhalen voor op reis</h1>
 		</section>
+		
 		<aside>
 			<form>
 				<fieldset>
 					<legend>Filter opties</legend>
-					<select>
+					<select id="filter" onchange="filterContent();">
 						<option value>Filter opties</option>
 						<option value="1">Tijd / Plaats</option>
 						<option value="2">Perspectief</option>
@@ -39,26 +43,17 @@
 					<legend>Sorteer opties</legend>
 					<select>
 						<option value>Sorteer opties</option>
-						<option value="1">A tot Z</option>
-						<option value="2">Z tot A</option>
-						<option value="3">Populiariteit</option>
+						<option value="5">A tot Z</option>
+						<option value="6">Z tot A</option>
+						<option value="7">Populiariteit</option>
 					</select>
 				</fieldset>
 			</form>
 		</aside>
 		
-		<section>
-			<form>
-				<fieldset>
-					<legend>Zoeken</legend>
-					<input type="text" name="search" placeholder="Zoeken..">
-				</fieldset>
-			</form>
-		</section>
-		
 		<main>
 
-			<article>
+			<article class="content2">
 				<header>
 					<h2>Alzheimer</h2>
 				</header>
@@ -66,12 +61,11 @@
 				Ik stap uit en loop achter een wagentje aan. Van wie is dat wagentje? Ik weet het niet. Ik kijk in het wagentje. Er ligt een ventje</p>
 				<footer>
 					<a href="alzheimer.html">Lees meer</a>
-					<button class="download"></button>
-					<button class="heartButton"></button>	
+					<button></button>	
 				</footer>
 			</article>
 		
-			<article>
+			<article class="content1">
 				<header>
 					<h2>Moe</h2>
 				</header>
@@ -79,12 +73,11 @@
 				Ik wou dat ik hem was. De mensen lopen in zichzelf gekeerd over het plein. De regen doet z’n best mij wakker te houden, maar mijn oogleden voelen zwaar</p>
 				<footer>
 					<a href="moe.html">Lees meer</a>
-					<button class="download"></button>
-					<button class="heartButton"></button>
+					<button></button>
 				</footer>
 			</article>
 
-			<article>
+			<article class="content2">
 				<header>
 					<h2>Voetbalanalisten</h2>
 				</header>
@@ -92,12 +85,11 @@
 				Tenminste, van het eerste half uur. Echt. Heb ik op het puntje van m’n stoel gezeten. Of niet dan, ja toch? Hansie? Hè? Ik bedoel, hoe die gozer alleen</p>
 				<footer>
 					<a href="voetbalanalisten.html">Lees meer</a>
-					<button class="download"></button>
-					<button class="heartButton"></button>
+					<button></button>
 				</footer>
 			</article>
 			
-			<article>
+			<article class="content3">
 				<header>
 					<h2>Ruud Lubbers</h2>
 				</header>
@@ -106,12 +98,11 @@
 				The square around Central Station is a mess. There’s a building anger</p>
 				<footer>
 					<a href="#">Lees meer</a>
-					<button class="download"></button>
-					<button class="heartButton"></button>
+					<button></button>
 				</footer>
 			</article>
 				
-			<article>
+			<article class="content3">
 				<header>
 					<h2>Lange Frans</h2>
 				</header>
@@ -119,12 +110,11 @@
 				Het is dinsdagochtend, zoveel februari Ik stap uit de bus, zonder veel bombarie Voor me slaapt mijn zoon, in z’n kinderwagen Voor hem zing ik dit lied, zonder koek van</p>
 				<footer>
 					<a href="#">Lees meer</a>
-					<button class="download"></button>
-					<button class="heartButton"></button>
+					<button></button>
 				</footer>
 			</article>
 				
-			<article>
+			<article class="content1">
 				<header>
 					<h2>Zombie</h2>
 				</header>
@@ -132,8 +122,7 @@
 				Het is gekkenwerk dat ik hier ben, maar de brandstof van de bus is op. Ik hoopte dwars door de menigte wandelende lijken heen te kunnen rauzen. Maar het mocht niet zo zijn. Ergens ter hoogte</p>
 				<footer>
 					<a href="#">Lees meer</a>
-					<button class="download"></button>
-					<button class="heartButton"></button>
+					<button></button>
 				</footer>
 			</article>
 				
@@ -146,8 +135,7 @@
 				2. Het was in die dagen dat Jezus dat geschrift wenste te lezen, edoch nergens een exemplaar kon vinden. 3. En Jezus zette voet richting het Plein van Aankomst.</p>
 				<footer>
 					<a href="#">Lees meer</a>
-					<button class="download"></button>
-					<button class="heartButton"></button>
+					<button></button>
 				</footer>
 			</article>
 			
@@ -159,8 +147,7 @@
 				Je zocht er dus zeg maar al een tijdje naar, maar het was nergens te vinden, dus daarom moest het wel in de bibliotheek te vinden zijn.</p>
 				<footer>
 					<a href="#">Lees meer</a>
-					<button class="download"></button>
-					<button class="heartButton"></button>
+					<button></button>
 				</footer>
 			</article>
 			
@@ -172,8 +159,7 @@
 				Ik hoor ze fluisteren. ‘Kijk, daar gaat Jeroen Krabbé. De grote acteur/regisseur/schilder.’ Terwijl, wat doe ik nu eigenlijk?</p>
 				<footer>
 					<a href="#">Lees meer</a>
-					<button class="download"></button>
-					<button class="heartButton"></button>
+					<button></button>
 				</footer>
 			</article>
 		</main>

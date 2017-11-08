@@ -4,8 +4,10 @@
 	<head>
 		<title>Transavia 99 verhalen</title>
 		<link rel="stylesheet" href="styles/verhalen.css" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
 		<meta charset="utf-8">	
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	</head>
 	
 	<body>
@@ -17,20 +19,47 @@
 					<li><a href="login.html"><img src="images/aanmelden.png" alt="aanmelden"></a></li>
 				</ul>
 			</nav>
+			<div id="counter">0</div>
 		</header>
-	<main class="alzheimer">	
+	<main>
+		<h1>Alzheimer</h1>
+		<p>Ik stap uit, euh… Hoe heet het? <i class="disapear">Zo’n vervoersdinges op wielen.</i> Van de gemeente. Wit met blauw. Kom. Lijn 12. Of was het 21? Ik weet het niet. 
+		Ik stap uit en loop achter een wagentje aan. Van wie is dat wagentje? Ik weet het niet. Ik kijk in het wagentje. Er ligt een ventje in. Hij komt me <i class="disapear">vaag</i> bekend voor. Hij slaapt. 
+		Ik wil ook slapen. Maar ik loop hier. <i class="disapear">En waarom?</i> Ik weet het niet. Mensen lopen langs me heen. Het miezert. En het waait. Het is hier één grote bouwput. 
+		Een geluidsmuur van heipalen en drilboren hangt in de lucht, ergens op zo’n twintig meter hoogte boven de grond.</p>
+
+		<p>Ik sta voor een groot gebouw. Een vrij bizar gebouw. Een soort omgekeerde L van beton hangt over een <i class="disapear">constructie die grotendeels uit glas bestaat.</i> 
+		‘Bibliotheek’ lees ik boven een horizontale streep van steen. Ik sta dus voor de bibliotheek. Ik weet niet waarom. Een vrouw excuseert zich. Ken ik haar? Ze heeft gitzwart haar. 
+		Krullen. Ze dansen de pierlala in de wind. Ik glimlach haar vriendelijk toe. Dat kun je maar het beste doen. Dan zit je altijd goed. In het Engels vraagt zij of dit het postkantoor is. 
+		Ik weet het niet. <i class="disapear">Is dit het postkantoor?</i> Zou best kunnen. Ik kijk naar het gebouw. ‘Bibliotheek’ zie ik staan. ‘Nee,’ zeg ik haar. Ik wil zeggen dat dit de bibliotheek is, 
+		maar ik kom niet op het Duitse woord voor bibliotheek. Ze laat me een briefje zien. Ik zie twee straatnamen staan. Het zegt me niks. Ik haal bij wijze van excuus m’n schouders op. 
+		Ze kijkt achterom. <i class="disapear">Een hoe-heet-het</i> rijdt weg. Ze glimlacht naar me en begint achter de hoe-heet-het aan te rennen.</p>
+
+		<p>Binnen sta ik voor de <i class="disapear">Q</i>. Ik weet bij God niet waarom. Ik loop naar de computer. Ik moet iets intikken, maar ik weet niet wat. 
+		Ik loop naar een <i class="disapear">medewerker.</i> Ik zeg dat ik iets zoek, maar niet weet wat ik zoek. Hij zegt dat ie me niet kan helpen als ik niet weet wat ik zoek. 
+		Ik verlaat het pand.</p>
+
+		<p>Op het Bos en Lommerplein sta ik in een babywinkel. Ik had een reden dat ik hier was. 
+		Ik wilde iets kopen, maar ik weet niet wat. Ik verlaat het pand met vijf rompertjes, drie truitjes, vier broekjes, bestek van Winnie de Poeh en hamertje tik. 
+		Ik stap in de bus. <i class="disapear">Lijn 21 richting het station.</i></p>
+		
+		<section>
+			<button class="like" onclick="likePopUp();">Leuk verhaal</button>
+			<div id="countLike">
+				141
+				<img src="images/duimpje.png" alt="thumb" class="likeUp">
+			</div>
+		</section>
+		
+		<section>
+			<h3 id="finalMessage"></h3>
+			<button id="download" onclick="downloading(0)">Download</button>
+			<progress id="progressBar" value="0" max="100"></progress>
+			<span id="status"></span>
+		</section>
+	
 	</main>	
 	
-	<section>
-		<form>
-			<fieldset>
-				<legend>Plaats een reactie</legend>
-					<label for="name">Naam</label><input type="text" id="name" required>
-					<label for="mail">E-mailadres</label><input type="email" id="mail" placeholder="gebruiker@domein.com" required>
-					<label for="message">Bericht</label><textarea id="message"></textarea>
-					<button type="submit">Plaats reactie</button>
-			</fieldset>
-		</form>
-	</section>
+	<script src="js/verhalen.js"></script>
 	</body>
 </html>
