@@ -26,6 +26,7 @@ header nav ul {
 	display: flex;
 	flex-flow: row;
 	justify-content: space-between;
+	width: 100%;
 }
 
 ul {
@@ -47,6 +48,7 @@ img[src="images/transavia2.png"] {				/* Transavia logo */
 img[src="images/hartje.png"] {					/*Favorieten hartje */
 	width: 2.5em;
 	margin-right: .7em;
+	margin-left: .7em;
 	margin-top: .5em;
 }	
 
@@ -54,6 +56,35 @@ img[src="images/aanmelden.png"] {				/*Aanmelden knop */
 	width: 2em;
 	margin-right: .5em;
 	margin-top: .6em;
+}
+
+input[type="search"] {
+     background: url("http://www.dreamtemplate.com/dreamcodes/web_icons/gray-classic-search-icon.png") no-repeat scroll .3125em 60% #ffffff;	/*Zoek icoon*/
+     border-radius: 0.625em;
+     border: .0625em solid #f1f1f1;
+     color: transparent;
+     cursor: pointer;
+     font-family: "NexaRegular";
+     font-size: 1em;
+     padding: .75em .3125em .75em 1.375em;
+     transition: all 0.3s ease 0s;
+     width: 1.375em;
+     margin-top: .25em
+}
+
+input[type="search"]:focus {
+     color: #666666;
+     cursor: auto;
+     padding-left: 1.875em;
+     width: 10em;
+}
+
+#counter {
+    font-family: "Nexa Bold";
+    color: white;
+    position: absolute;
+    right: 4.1em;
+    top: 1em;
 }
 
 /*Main content*/
@@ -86,7 +117,7 @@ h2 {
 	font-weight: bold;
 	text-align: center;
 	font-family: "Nexa Bold";
-	padding-top: 0.3em;
+	padding: 0.3em 0;
 }
 
 p {
@@ -94,7 +125,7 @@ p {
 	margin-right: 1em;
 	margin-bottom: 1.5em;
 	font-family: "NexaRegular";
-	color: #fff;
+	color: #000;
 }
 
 aside {
@@ -106,6 +137,8 @@ article {														/*Algemene style voor artices*/
 	border-radius: .5rem;
 	background-size: cover;
 	background-position: center; 
+	background-color: hsla(0,0%,80%,0.70);
+    background-blend-mode: overlay;
 }
 
 article:first-child {											
@@ -159,7 +192,7 @@ article a {														/*Linkje naar het verhaal in de article */
 	border-radius: 1.25em;
 	font-family: "Nexa Bold";
 	margin-bottom: .5em;
-	margin-left: .5em;
+	margin-left: .9em;
 	display: inline-block;
 	text-decoration: none;
 	font-size: 1.2em;
@@ -177,7 +210,7 @@ article footer button {
 	background-color: rgba(255,255,255, .0);
 	position: relative;
 	margin-left: auto;
-	margin-right: .5em;
+	margin-right: .9em;
 }
 
 .color-active {
@@ -191,36 +224,8 @@ article footer button {
 	cursor: pointer;
 	position: relative;
 	margin-left: auto;
-	margin-right: .5em;
-	transition: 5s;
-}
-
-.download {
-	background-image: url('../images/download.png');
-	background-size: 3em;
-	width: 3em;
-	height: 3em;
-	background-repeat: no-repeat;
-	background-position: center;
-	border-style: none;
-	cursor: pointer;
-	position: relative;
-	margin-left: auto;
-	transition: 6s;
-}
-
-.download-active {
-	background-image: url('../images/add_actief.png');
-	background-size: 3em;
-	width: 3em;
-	height: 3em;
-	background-repeat: no-repeat;
-	background-position: center;
-	border-style: none;
-	cursor: pointer;
-	position: relative;
-	margin-left: auto;
-	transform: rotate(360deg);
+	margin-right: .9em;
+	transition: 2s;
 }
 	
 /* Verhalen laten verschijnen */
@@ -244,6 +249,7 @@ article footer button {
 	display: block;
 }
 
+/* Meer verhalen button */
 section button {
 	background-color: #2800a0;
 	color: #fff;
@@ -293,31 +299,11 @@ select {
 	border: #2800a0;
 	background-color: #2800a0;
 	color: #fff; 
+	margin-top: .5em;
 }
 
 select:hover {
 	background-color: #ff3268;
-}
-
-input[type=text] {
-	display: block;
-	margin: auto;
-	width: 9em;
-	border: .0625em solid #ccc;
-	border-radius: .5em;
-	font-size: 1em;
-	background-image: url('../images/searchicon.png');
-	background-size: 2em;
-	background-position: 0.3125em;
-	background-repeat: no-repeat;
-	padding: .75em 1.25em .75em 2.5em;
-	transition: width 0.4s ease-in-out;
-}
-
-input[type=text]:focus {
-    width: 75%;
-	border: .0625em solid #2800a0;
-	outline: 0;
 }
 
 /*Media queries*/
@@ -330,6 +316,7 @@ input[type=text]:focus {
 	p {
 		max-width: 25em;
 	}
+	
 }
 
 @media screen and (min-width: 32.5em) {						/*520px*/

@@ -70,6 +70,15 @@ h1 {
 	margin: 0;
 }
 
+#counter {
+    font-family: Nexa-Bold;
+    color: white;
+    position: absolute;
+    right: 4.1em;
+    top: 1em;
+	font-family: 'Nexa Bold';
+}
+
 /*formulieren*/
 fieldset {
 	border: 0;

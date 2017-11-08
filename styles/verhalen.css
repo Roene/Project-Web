@@ -8,6 +8,16 @@
 	src: url("../webfonts/Nexa-Bold.otf"); 
 }
 
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #424242;
+}
+
 
 /* header content */
 header nav ul {
@@ -46,173 +56,185 @@ img[src="images/aanmelden.png"] {				/*Aanmelden knop */
 	margin-top: .6em;
 }
 
+#counter {
+    font-family: Nexa-Bold;
+    color: white;
+    position: absolute;
+    right: 4.1em;
+    top: 1em;
+	font-family: 'Nexa Bold';
+}
+
 /* basis */
-.alzheimer, .voetbalanalisten, .moe {
+.voetbalanalisten, .moe {
     background-size: 100%;
     padding-bottom: 530%;
     background-repeat: no-repeat;
 }
 
-/*formulieren*/
-fieldset {
-	border: 0;
+h1 {
+	color: #000000;
+	font-family: 'Arvo', serif;
+	margin-bottom: 2em;
+	margin: 2em auto;
+	max-width: 12.8em;
+	font-size: 2.375em;
+	letter-spacing: -.04em;
 }
 
-legend {
-	color: #2800a0;
-	font-family: "Nexa Bold";
-	font-size: 1.25em;
+.disapear {
+	opacity: 0;
 }
 
-section {
-	background-color: #00d66c;
-	border-radius: .95em;
-	margin: 1em auto;
-	position: relative;
-	max-width: 35em;
-}
-
-form {
-	display: inline-block;
-	max-width: 60em;
-	border-radius: .95em;
-	padding: 0;
-	margin: 0;
-}
-	
-form button {
-	background-color: #ff3268;
-	color: #fff;
-	cursor: pointer;
-	font-weight: bold;
-	border: 0;
-	box-shadow: inset 0 -0.1875em 0.0625em #ca2b55;
-	padding: .5rem;
-	transition: .2s;
-	border-radius: 1.25em;
-	min-height: 1.5rem;
-	min-width: 1.5rem;
-	font-family: "NexaRegular";
-	display: block;
-	margin-top: .5em;
-}
-
-form button:active {
-	background-color: #ca2b55;
-}
-
-form label {
-	display: inline-block;
-	text-align: left;
-	margin-bottom: .2em;
-	margin-top: .2em;
-	font-family: "Nexa Bold";
-	width: 80%;	
-}
-
-form input {
-	border-radius: .5rem;
-    border: 1px solid lightgray;
-    padding: 0.5em 0.5em;
-    display: inline;
-    width: 88%;
-    font-size: 0.8em;
-	outline: 0;
-}
-
-textarea {
-	height: 15em;
-	width: 88%;
-	border-radius: .5rem;
-    border: 1px solid lightgray;
-    padding: 0.5em 0.5em;
-    display: inline;
-    width: 88%;
-    font-size: 0.8em;
-	outline: 0;
-}
-
-/*Formulier states*/
-input:hover {
-	border: .0625em solid #000000;
-}
-
-input:focus {
-	border: .0625em solid #2800a0;
-}
-
-@keyframes checkValid {
-    from { opacity:0;
-    }
-    to { opacity:1;
-    }
-}
-
-input:required:valid {
-    border-color: #00d66c;
-    width: 88%;
-    background: #fff url('../images/add_actief.png') no-repeat 35em;
-    animation: checkValid 0.8s ease-in;
-    background-size: 1.5em;
-}
-
-/* Link states */
-a {
-	color: #000;
-}
-
-a:visited {
-	color: #2800a0
+p {
+	color: #000000;
+	font-family: 'Arvo', serif;
+	letter-spacing: -.03em;
 }
 
 /*Button*/
 button {
+	background-color: #2800a0;
+	color: #fff;
 	cursor: pointer;
+	border: 0;
+	box-shadow: inset 0 -0.1875em 0.0625em #120145;
+	padding: .5rem;
+	transition: .2s;
+	border-radius: 1.25em;
+	font-family: "Nexa Bold";
 	font-size: 1.2em;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 1em;
+	margin-top: 1em;
+	outline: 0;
+}
+
+section:first-of-type {
+	display: flex;
+	align-items: center;
+	background-color: #fff;
+}
+
+section:nth-of-type(2) {
+	background-color: #fff;
+	display: flex;
+	flex-flow: column;
+}
+
+/*Download*/
+progress {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 15em;
+	background: #2800a0;
+}
+
+h3 {
+	margin-right: auto;
+	margin-left: auto;
+	font-family: "Nexa Bold";
+	margin-bottom: 0;
+}
+
+span {
+	margin-right: auto;
+	margin-left: auto;
+	font-family: "NexaRegular";
+	margin-bottom: 2em;
+}
+
+/* Animatie liken */
+.likeActive {
+	background-color: #120145;
+}
+
+img[src="images/duimpje.png"] {
+	width: 1.9em;
+	height: 1.9em;
+}
+
+#countLike {
+	color: #2800a0;
+	font-family: 'Nexa Bold';
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.likeUpAnimation {
+    animation: likeUpAnimation linear 1s;
+    animation-iteration-count: 1;
+    transform-origin: 50% 50%;
+}
+
+@keyframes likeUpAnimation{
+    0% {
+        transform: translate(0em, 0em) rotate(0deg) scaleX(1.00) scaleY(1.00);
+    }
+    22% {
+        transform: translate(.125em, 0em) rotate(4deg) scaleX(0.94) scaleY(0.96);
+    }
+    58% {
+        transform: translate(.250em, -1.375em) rotate(-20deg) scaleX(1.30) scaleY(1.24);
+    }
+    100% {
+        transform: translate(0em, 0em) rotate(0deg) scaleX(1.00) scaleY(1.00);
+    }
 }
 
 /*Media queries*/
 @media screen and (min-width: 15em) {						/*360px*/
-	.alzheimer {
-		background-image: url('../images/alzheimersmall.jpg');
+	p {
+		max-width: 20em;
+		margin: 4em auto;
 	}
+	
+	h1 {
+		max-width: 8.5em;
+	}
+	
 	.voetbalanalisten {
-		background-image: url('../images/voetbalanalistensmall.jpg');
-		padding-bottom: 1045%;
+		background-image: url('../images/voetbalanalistens.png');
+		padding-bottom: 1100%;
 	}
 	.moe {
-		background-image: url('../images/moesmall.jpg');
-		padding-bottom: 830%;
+		background-image: url('../images/moes.png');
+		padding-bottom: 485%;
 	}
 }
 
 @media screen and (min-width: 48em) {						/*768px*/
-	.alzheimer {
-		background-image: url('../images/alzheimermedium.jpg');
-		padding-bottom: 132%;
+	p {
+	margin: 4em auto;
+	max-width: 30em;
+	}
+	
+	h1 {
+	margin: 2em auto;
+	max-width: 12.8em;
 	}
 	.voetbalanalisten {
-		background-image: url('../images/voetbalanalistenmedium.jpg');
-		padding-bottom: 132%;
+		background-image: url('../images/voetbalanalistenm.png');
+		padding-bottom: 327%;
 	}
 	.moe {
-		background-image: url('../images/moemedium.jpg');
-		padding-bottom: 275%;
+		background-image: url('../images/moem.png');
+		padding-bottom: 138%;
 	}
 	
 }
 
 @media screen and (min-width: 100em) {						/*1600px*/
-	.alzheimer {
-		background-image: url('../images/alzheimerlarge.jpg');
-		padding-bottom: 55%;
-	}
 	.voetbalanalisten {
-		background-image: url('../images/voetbalanalistenlarge.jpg');
+		background-image: url('../images/voetbalanalistenl.png');
 		padding-bottom: 55%;
 	}
 	.moe {
-		background-image: url('../images/moelarge.jpg');
-		padding-bottom: 55%;
+		background-image: url('../images/moel.png');
+		padding-bottom: 57%;
+		background-color: #fff;
 	}
 }
